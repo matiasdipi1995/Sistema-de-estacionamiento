@@ -6,17 +6,21 @@ namespace Sistema_de_estacionamiento
 {
     public class Moto: Vehiculo
     {
-        public string Cilindrada { get; set; }
+        public int Cilindrada { get; set; }
         public double PrecioPorHora = 5.0;
 
-        public Moto (string patente, string marca, string modelo, int tiempoestacionamiento, string cilindrada) : base(patente,marca,modelo,tiempoestacionamiento)
+        public Moto (string patente, string marca, string modelo, int tiempoestacionamiento, int cilindrada) : base(patente,marca,modelo,tiempoestacionamiento)
         {
             Cilindrada = cilindrada;
         }
 
         public override double CalcularCostoEstacionamiento()
         {
-            return (TiempoEstacionamiento/60.0) * PrecioPorHora;
+            if(Cilindrada>= 250)
+            {
+                return (TiempoEstacionamiento * PrecioPorHora) + 20;
+            }
+            return TiempoEstacionamiento * PrecioPorHora;
         }
     }
 }

@@ -14,7 +14,15 @@ namespace Sistema_de_estacionamiento
         }
         public override double CalcularCostoEstacionamiento()
         {
-            return (TiempoEstacionamiento / 60.0) * PrecioPorHora;
+            if(TiempoEstacionamiento>2)
+            {
+
+                return (TiempoEstacionamiento * PrecioPorHora)*0.9;
+            }
+            else
+            {
+                return TiempoEstacionamiento * PrecioPorHora;
+            }
         }
     }
 }
