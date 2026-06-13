@@ -13,14 +13,6 @@ namespace Sistema_de_estacionamiento
         {
             Cilindrada = cilindrada;
         }
-
-        public override double CalcularCostoEstacionamiento()
-        {
-            if(Cilindrada>= 250)
-            {
-                return (TiempoEstacionamiento * PrecioPorHora) + 20;
-            }
-            return TiempoEstacionamiento * PrecioPorHora;
-        }
+        public override double CalcularCostoEstacionamiento() => (Cilindrada >= 250) ? (TiempoEstacionamiento * PrecioPorHora) + 20 : TiempoEstacionamiento * PrecioPorHora;
     }
 }

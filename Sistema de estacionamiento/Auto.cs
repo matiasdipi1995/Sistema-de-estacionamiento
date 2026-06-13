@@ -12,17 +12,6 @@ namespace Sistema_de_estacionamiento
         {
 
         }
-        public override double CalcularCostoEstacionamiento()
-        {
-            if(TiempoEstacionamiento>2)
-            {
-
-                return (TiempoEstacionamiento * PrecioPorHora)*0.9;
-            }
-            else
-            {
-                return TiempoEstacionamiento * PrecioPorHora;
-            }
-        }
+        public override double CalcularCostoEstacionamiento() => (TiempoEstacionamiento > 2) ? (TiempoEstacionamiento * PrecioPorHora) * 0.9 : TiempoEstacionamiento * PrecioPorHora;
     }
 }
